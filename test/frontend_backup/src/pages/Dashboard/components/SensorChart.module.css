@@ -1,0 +1,104 @@
+.chartSection {
+  margin-top: 20px;
+}
+
+/* 제목 + 드롭다운 래퍼 */
+.sectionHeader {
+  display: block;
+}
+
+.sectionTitleRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin: 0 0 6px 0;
+}
+
+/* ▼ 박스가 제목과 약간 간격을 두고 오른쪽 정렬 */
+.kindRow {
+  position: relative;          /* ▼ 메뉴 absolute 기준 */
+display: flex;
+justify-content: flex-end;   /* 오른쪽 정렬 */
+ margin-top: 10px;            /* 제목과 간격 */
+  margin-bottom: 8px;
+}
+
+
+/* 드롭다운 박스 */
+.dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  user-select: none;
+}
+
+/* ▼ 아이콘 회전 효과 */
+.chevronOpen {
+  transform: rotate(180deg);
+  transition: transform .15s ease;
+}
+
+/* 메뉴: 버튼 아래로 뜨고(absolute), 박스 크기 변화 없음 */
+.dropdownMenu {
+  position: absolute;
+  top: 38px;
+  right: 0;                      /* 오른쪽 정렬 */
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  z-index: 10;
+  min-width: 200px;
+}
+
+.dropdownItem {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dropdownItem:hover {
+  background: #f3f4f6;
+}
+
+/* 카드/차트 */
+.chartCard {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  padding: 16px;
+  min-height: 220px;
+}
+
+.chartWrapper {
+  width: 100%;
+  height: 260px;
+}
+
+.emptyState {
+  height: 180px;
+  display: grid;
+  place-items: center;
+  color: #9ca3af;
+  font-size: 14px;
+}

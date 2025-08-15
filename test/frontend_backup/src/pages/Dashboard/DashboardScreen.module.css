@@ -1,0 +1,478 @@
+/* DashboardScreen.module.css – 정리본 */
+
+/* 전체 레이아웃 */
+.dashboardContainer {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* 메인 영역 */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 헤더 */
+.header {
+  background: #fff;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.pageSubtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;   
+}
+
+.headerItem {
+  position: relative;
+}
+
+.headerButton {
+  position: relative;
+  padding: 10px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #6b7280;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.headerButton:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.adminButton:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* 메인 컨텐츠 스크롤 영역 */
+.dashboardContent {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+/* 섹션 공통 */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.sectionTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  letter-spacing: .3px;
+}
+
+.infoIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #6b7280;
+  cursor: help;
+}
+
+.infoIcon:hover {
+  color: #111827;
+}
+
+/* 요약 섹션 (표 카드) */
+.summarySection {
+  margin-bottom: 32px;
+  /* 표와 차트 간격 */
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* 차트 타이틀 및 버튼 컨테이너 */
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  /* 기존: 왼쪽/오른쪽 요소를 분리 */
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* 버튼을 오른쪽 끝으로 정렬 */
+.chartButtons {
+  display: flex;
+  justify-content: flex-end;
+  /* 오른쪽 정렬 */
+  gap: 8px;
+}
+
+
+.chartSection {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.chartTitle {
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.summaryCard {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+/* 표 스타일 */
+.summaryTable {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.summaryTable thead {
+  background: #f8f9fa;
+}
+
+.summaryTable th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.summaryTable td {
+  padding: 16px;
+  font-size: 14px;
+  color: #1f2937;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.summaryTable td:first-child {
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.summaryTable tr:hover {
+  background: #f8f9fa;
+}
+
+.summaryTable tr:last-child td {
+  border-bottom: none;
+}
+
+/* 상태 배지 색상 (DashboardUtils.getStatusClass 에서 사용) */
+.statusGood {
+  color: #059669;
+  font-weight: 600;
+}
+
+.statusWarning {
+  color: #d97706;
+  font-weight: 600;
+}
+
+.statusDanger {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* 차트(공통 컴포넌트에서 사용) */
+.chartContainer {
+  width: 100%;
+  height: 320px;
+}
+
+.responsiveContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.chartGrid {
+  stroke-dasharray: 3 3;
+  stroke: #f0f0f0;
+}
+
+.chartAxis {
+  stroke: #666;
+  font-size: 12px;
+}
+
+.chartLine {
+  stroke-width: 2;
+}
+
+.chartArea {
+  fill-opacity: .3;
+  stroke-width: 2;
+}
+
+.chartDot {
+  stroke-width: 2;
+  r: 4;
+}
+
+.chartActiveDot {
+  r: 6;
+  stroke-width: 2;
+}
+
+/* 플레이스홀더 (다른 메뉴일 때) */
+.placeholderContent {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.placeholderTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+.placeholderSubtitle {
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.placeholderNote {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .dashboardContent {
+    padding: 16px;
+  }
+
+  .summarySection {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .headerRight {
+    align-self: flex-end;
+  }
+
+  .pageTitle {
+    font-size: 24px;
+  }
+
+  .sectionHeader {
+    margin-top: 4px;
+    /* 기존보다 작게 */
+    margin-bottom: 12px;
+  }
+
+
+  .summaryCard {
+    overflow-x: auto;
+  }
+
+  .summaryTable {
+    min-width: 520px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboardContent {
+    padding: 12px;
+  }
+
+  .summarySection {
+    padding: 16px;
+  }
+
+  .pageTitle {
+    font-size: 22px;
+  }
+
+  .summaryTable th,
+  .summaryTable td {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .chartContainer {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px;
+  }
+
+  .dashboardContent {
+    padding: 8px;
+  }
+
+  .summarySection {
+    padding: 12px;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .pageSubtitle {
+    font-size: 12px;
+  }
+
+  .sectionTitle {
+  margin-top: 0; /* 기본 margin 제거 */
+  padding-top: 4px; /* 필요 시 최소 여백 */
+}
+
+  .chartContainer {
+    height: 250px;
+  }
+}
+
+
+/* 토글 버튼 그룹 */
+.toggleGroup {
+  display: inline-flex;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+/* 토글 버튼 */
+.toggleBtn {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  background: transparent;
+  border: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.toggleBtn:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+/* 활성 토글 */
+.toggleBtnActive {
+  background: #111827;
+  color: #fff;
+}
+
+.chartButtons {
+  display: flex;
+  justify-content: flex-end;
+  /* 제목 아래, 오른쪽 정렬 */
+  margin-bottom: 12px;
+  /* 버튼과 차트 사이 간격 */
+}
+
+.summaryTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}

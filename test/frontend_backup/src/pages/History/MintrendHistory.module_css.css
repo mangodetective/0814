@@ -1,0 +1,789 @@
+/* MinTrendHistory.module.css - MinTrend 히스토리 CSS 모듈 스타일 */
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Header */
+.header {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+.headerTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+.headerSubtitle {
+  color: #333333;
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 메인 컨테이너 */
+.historyMain {
+  flex: 1;
+  padding: 24px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.historyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* 필터 섹션 */
+.filterSection {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.filterHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.filterToggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.filterToggle:hover {
+  background-color: #f3f4f6;
+}
+
+.filterIcon {
+  transition: transform 0.2s ease;
+}
+
+.filterIcon.open {
+  transform: rotate(90deg);
+}
+
+.resetButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  color: #ef4444;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetButton:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.filterContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.filterContent.hidden {
+  display: none;
+}
+
+.filterGroup {
+  position: relative;
+}
+
+.filterLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterSelect:hover {
+  border-color: #9ca3af;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.applyButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: start;
+}
+
+.applyButton:hover {
+  background: #2563eb;
+}
+
+.applyButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* 레코드 섹션 */
+.recordsSection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.recordsHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.recordsTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+.recordsSubtitle {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 4px;
+}
+
+/* 스크롤 가능한 레코드 리스트 */
+.recordsList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px 24px;
+  min-height: 0;
+}
+
+.recordItem {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-left: 4px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.recordItem:hover {
+  background: #f3f4f6;
+  border-left-color: #3b82f6;
+}
+
+.recordItem:last-child {
+  margin-bottom: 0;
+}
+
+.recordHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.recordTime {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  font-family: 'Courier New', monospace;
+}
+
+.recordFilename {
+  font-size: 12px;
+  color: #666666;
+  font-family: 'Courier New', monospace;
+}
+
+.sensorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sensorCard {
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.sensorName {
+  font-size: 11px;
+  color: #666666;
+  margin-bottom: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sensorValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statusGood {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.statusNormal {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.statusWarning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* 로딩 상태 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  flex: 1;
+}
+
+.loadingSpinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spinAnimation 1s linear infinite;
+}
+
+@keyframes spinAnimation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  margin-left: 12px;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* 빈 상태 */
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666666;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyStateIcon {
+  width: 64px;
+  height: 64px;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.emptyStateTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.emptyStateDescription {
+  font-size: 14px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* 에러 상태 */
+.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  border-left: 4px solid #ef4444;
+  flex-shrink: 0;
+}
+
+/* 더보기 버튼 */
+.loadMoreContainer {
+  padding: 16px 24px;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.loadMoreButton {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  background: #2563eb;
+}
+
+.loadMoreButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* 알림 및 관리자 메뉴 스타일 */
+.notificationContainer {
+  position: relative;
+}
+
+.notificationButton {
+  position: relative;
+  padding: 8px;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notificationButton:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  width: 320px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  z-index: 50;
+}
+
+.dropdownHeader {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dropdownTitle {
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.notificationList {
+  max-height: 384px;
+  overflow-y: auto;
+}
+
+.notificationItem {
+  padding: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.notificationItem:hover {
+  background-color: #f9fafb;
+}
+
+.notificationItemUnread {
+  background-color: #eff6ff;
+}
+
+.notificationMessage {
+  font-size: 14px;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+}
+
+.notificationTimestamp {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.emptyNotification {
+  padding: 16px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.dropdownOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+.adminContainer {
+  position: relative;
+}
+
+.adminButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.adminButton:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.adminAvatar {
+  width: 32px;
+  height: 32px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminLabel {
+  font-weight: 500;
+}
+
+.adminDropdown {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  width: 192px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  z-index: 50;
+}
+
+.adminDropdownContent {
+  padding: 8px 0;
+}
+
+.adminDropdownItem {
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.adminDropdownItem:hover {
+  background-color: #f3f4f6;
+}
+
+.adminDropdownLogout {
+  color: #dc2626;
+}
+
+.adminDropdownDivider {
+  margin: 8px 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .historyMain {
+    padding: 16px;
+  }
+  
+  .filterContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .sensorGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filterHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  
+  .filterContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .sensorGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  
+  .sensorCard {
+    padding: 8px;
+  }
+  
+  .sensorValue {
+    font-size: 14px;
+  }
+  
+  .recordHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterSection,
+  .recordsSection {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .recordsList {
+    padding: 12px;
+  }
+  
+  .recordItem {
+    padding: 12px;
+  }
+  
+  .sensorCard {
+    padding: 6px;
+  }
+  
+  .sensorName {
+    font-size: 10px;
+  }
+  
+  .sensorValue {
+    font-size: 12px;
+  }
+  
+  .statusBadge {
+    padding: 1px 6px;
+    font-size: 9px;
+  }
+}
+
+/* 스크롤바 스타일링 */
+.recordsList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recordsList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.recordsList::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.recordsList::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .historyMain {
+    background-color: #111827;
+  }
+  
+  .filterSection,
+  .recordsSection {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .filterToggle {
+    color: #f9fafb;
+  }
+  
+  .recordItem {
+    background: #374151;
+    border-left-color: #4b5563;
+  }
+  
+  .sensorCard {
+    background: #1f2937;
+    border-color: #4b5563;
+  }
+}
+
+/* 접근성 */
+@media (prefers-reduced-motion: reduce) {
+  .filterIcon,
+  .loadingSpinner,
+  .recordItem {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* 인쇄 스타일 */
+@media print {
+  .filterSection {
+    display: none;
+  }
+  
+  .recordsSection {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  .recordItem {
+    break-inside: avoid;
+    margin-bottom: 8px;
+  }
+  
+  .statusBadge {
+    border: 1px solid #000;
+    background: none !important;
+    color: #000 !important;
+  }
+}

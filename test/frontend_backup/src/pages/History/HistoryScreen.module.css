@@ -1,0 +1,176 @@
+/* HistoryScreen.module.css - 레이아웃 및 공통 스타일만 유지 */
+
+/* Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* Header */
+.header {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+.headerTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+.headerSubtitle {
+  color: #333333;
+  margin: 4px 0 0 0;
+  font-size: 14px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Notification */
+.notificationContainer {
+  position: relative;
+}
+
+.notificationButton {
+  position: relative;
+  padding: 8px;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notificationButton:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Admin Menu */
+.adminContainer {
+  position: relative;
+}
+
+.adminButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.adminButton:hover {
+  color: #111827;
+  background-color: #f3f4f6;
+}
+
+.adminAvatar {
+  width: 32px;
+  height: 32px;
+  background-color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminLabel {
+  font-weight: 500;
+}
+
+/* 히스토리 메인 컨테이너 */
+.historyMain {
+  flex: 1;
+  padding: 24px;
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.historyContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 테이블 섹션 */
+.tableSection {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+/* 에러 상태 */
+.error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  border-left: 4px solid #ef4444;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+  .historyMain {
+    padding: 16px;
+  }
+  
+  .tableSection {
+    padding: 16px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableSection {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+}
